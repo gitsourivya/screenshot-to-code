@@ -1,0 +1,20 @@
+# Python virtual environment
+backend/venv/
+
+# Environment variables / API keys
+backend/.env
+
+# Python cache
+backend/__pycache__/
+backend/*.pyc
+
+# Uploaded screenshots
+backend/uploads/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

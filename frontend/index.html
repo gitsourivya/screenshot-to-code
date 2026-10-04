@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Screenshot to Code</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            Screenshot<span>ToCode</span>
+        </div>
+
+        <div class="header-text">
+            Convert screenshots into working websites
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+
+        <!-- UPLOAD AREA -->
+
+        <section class="upload-card">
+
+            <div>
+
+                <h1>
+                    Turn a screenshot into code
+                </h1>
+
+                <p>
+                    Upload a website screenshot and Gemini will
+                    recreate it using HTML and CSS.
+                </p>
+
+            </div>
+
+
+            <div class="upload-controls">
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/png, image/jpeg, image/webp"
+                    hidden
+                >
+
+                <label
+                    for="imageInput"
+                    class="choose-button"
+                >
+                    Choose Screenshot
+                </label>
+
+
+                <span id="fileName">
+                    No file selected
+                </span>
+
+
+                <button
+                    id="generateButton"
+                    disabled
+                >
+                    Generate Code
+                </button>
+
+            </div>
+
+
+            <div
+                id="status"
+                class="status"
+            >
+                Choose a screenshot to begin.
+            </div>
+
+        </section>
+
+
+
+        <!-- WORKSPACE -->
+
+        <section class="workspace">
+
+
+            <!-- ORIGINAL SCREENSHOT -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <span>Original Screenshot</span>
+                </div>
+
+
+                <div class="image-container">
+
+                    <img
+                        id="originalImage"
+                        alt="Original screenshot"
+                    >
+
+                    <div
+                        id="imagePlaceholder"
+                        class="placeholder"
+                    >
+                        Upload a screenshot to preview it here.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LIVE PREVIEW -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <span>Live Preview</span>
+
+                    <span
+                        id="previewStatus"
+                        class="preview-status"
+                    >
+                        Waiting
+                    </span>
+
+                </div>
+
+
+                <div class="preview-container">
+
+                    <iframe
+                        id="preview"
+                        title="Generated website preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CODE SECTION -->
+         <section class="refine-card">
+
+    <div class="refine-title">
+        Refine with AI
+    </div>
+
+    <p>
+        Describe a change and Gemini will update the generated website.
+    </p>
+
+    <div class="refine-controls">
+
+        <textarea
+            id="refineInput"
+            placeholder="Example: Make the navbar darker and increase the spacing between cards."
+        ></textarea>
+
+        <button
+            id="refineButton"
+            disabled
+        >
+            Refine Website
+        </button>
+
+    </div>
+
+</section>
+
+        <section class="code-panel">
+
+            <div class="code-header">
+
+    <div class="code-title">
+        Generated Code
+    </div>
+
+    <div class="code-actions">
+
+        <div class="tabs">
+
+            <button
+                id="htmlTab"
+                class="tab active"
+            >
+                HTML
+            </button>
+
+            <button
+                id="cssTab"
+                class="tab"
+            >
+                CSS
+            </button>
+
+        </div>
+
+        <button
+            id="downloadButton"
+            class="download-button"
+            disabled
+        >
+            Download Project
+        </button>
+
+    </div>
+
+</div>
+
+                    <button
+                        id="htmlTab"
+                        class="tab active"
+                    >
+                        HTML
+                    </button>
+
+                    <button
+                        id="cssTab"
+                        class="tab"
+                    >
+                        CSS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="code-content">
+
+                <pre
+                    id="htmlCode"
+                    class="code active"
+                >No HTML generated yet.</pre>
+
+
+                <pre
+                    id="cssCode"
+                    class="code"
+                >No CSS generated yet.</pre>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
