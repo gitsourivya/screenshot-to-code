@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // =========================================
     // ELEMENTS
     // =========================================
-
+    const API_BASE_URL = "screenshot-to-code-liard.vercel.app";
     const imageInput = document.getElementById("imageInput");
     const generateButton = document.getElementById("generateButton");
 
@@ -191,8 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Sending screenshot to Flask...");
 
 
-            const response = await fetch(
-                "http://127.0.0.1:5000/upload",
+            const response =
+    await fetch(
+        `${API_BASE_URL}/upload`,
                 {
                     method: "POST",
                     body: formData
@@ -564,9 +565,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
 
-                const response =
-                    await fetch(
-                        "http://127.0.0.1:5000/refine",
+               const response =
+    await fetch(
+        `${API_BASE_URL}/refine`,
                         {
                             method: "POST",
 
