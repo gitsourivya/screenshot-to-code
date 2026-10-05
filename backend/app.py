@@ -20,7 +20,7 @@ CORS(app)
 # UPLOAD CONFIGURATION
 # =========================================
 
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = "/tmp/uploads"
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
