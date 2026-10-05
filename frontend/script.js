@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // =========================================
     // ELEMENTS
     // =========================================
-    const API_BASE_URL = "screenshot-to-code-liard.vercel.app";
+    const API_BASE_URL = "https://screenshot-to-code-liard.vercel.app";
     const imageInput = document.getElementById("imageInput");
     const generateButton = document.getElementById("generateButton");
 
